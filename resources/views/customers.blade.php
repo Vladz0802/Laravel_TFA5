@@ -9,21 +9,19 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Name</th>
+                <th>Full Name</th>
                 <th>Email</th>
                 <th>Phone</th>
-                <th>City</th>
             </tr>
         </thead>
         <tbody>
-            {{-- Loop through the static array sent by CustomerController --}}
+            {{-- Loop through the customers retrieved by Eloquent in CustomerController --}}
             @foreach ($customers as $customer)
                 <tr>
-                    <td>{{ $customer['id'] }}</td>
-                    <td>{{ $customer['name'] }}</td>
-                    <td>{{ $customer['email'] }}</td>
-                    <td>{{ $customer['phone'] }}</td>
-                    <td>{{ $customer['city'] }}</td>
+                    <td>{{ $customer->id }}</td>
+                    <td>{{ $customer->full_name }}</td>
+                    <td>{{ $customer->email }}</td>
+                    <td>{{ $customer->phone }}</td>
                 </tr>
             @endforeach
         </tbody>
